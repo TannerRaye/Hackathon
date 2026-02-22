@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SmartStudy AI</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div class="app">
+    
+    <!-- Top Bar -->
+    <div class="topbar">
+      <button id="menuBtn">☰</button>
+      <h1>SmartStudy AI</h1>
+    </div>
+
+    <!-- Sidebar -->
+    <div class="sidebar" id="sidebar">
+      <button onclick="switchTab('checklist')">Checklist</button>
+      <button onclick="switchTab('chatbot')">AI Chatbot</button>
+      <button onclick="switchTab('leaderboard')">Leaderboard</button>
+      <button onclick="switchTab('settings')">Settings</button>
+    </div>
+
+    <!-- Content Area -->
+    <div class="content">
+      
+      <!-- Checklist Tab (Default) -->
+      <div id="checklist" class="tab active">
+        <h2>Today's Study Plan</h2>
+        <ul id="taskList">
+          <li>
+            <input type="checkbox" />
+            Study Calculus (2 hrs)
+          </li>
+          <li>
+            <input type="checkbox" />
+            Review Biology Notes
+          </li>
+        </ul>
+        <button onclick="addTask()">+ Add Task</button>
+      </div>
+
+      <!-- Chatbot Tab -->
+      <div id="chatbot" class="tab">
+        <h2>AI Life Coach</h2>
+        <div class="chat-box" id="chatBox"></div>
+        <input 
+          type="text" 
+          id="chatInput" 
+          placeholder="Ask something..." 
+          onkeydown="handleChat(event)"
+        />
+      </div>
+
+      <!-- Leaderboard Tab -->
+      <div id="leaderboard" class="tab">
+        <h2>Leaderboard</h2>
+        <p>🏆 Alex - 42 hrs</p>
+        <p>🥈 You - 38 hrs</p>
+        <p>🥉 Jamie - 29 hrs</p>
+      </div>
+
+      <!-- Settings Tab -->
+      <div id="settings" class="tab">
+        <h2>Settings</h2>
+        <label>Preferred Work Hours:</label>
+        <input type="text" placeholder="e.g. 4PM - 9PM" />
+        <br><br>
+        <label>Struggle Subject:</label>
+        <input type="text" placeholder="e.g. Linear Algebra" />
+      </div>
+
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
